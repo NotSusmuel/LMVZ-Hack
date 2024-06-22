@@ -10,4 +10,4 @@
 
 
 2. Click on this Button;
-	* [Install](https://raw.githubusercontent.com/NotSusmuel/LMVZ-Hack/main.js)
+	* [Install](https://raw.githubusercontent.com/NotSusmuel/LMVZ-Hack/main/main.js)
