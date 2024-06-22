@@ -7,8 +7,6 @@
 // @match        https://*.lmvz.ch/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=lmvz.ch
 // @grant        none
-// @downloadURL  https://update.greasyfork.org/scripts/489662/LMVZ%20Digital%20Hack%20Ultimate.user.js
-// @updateURL    https://update.greasyfork.org/scripts/489662/LMVZ%20Digital%20Hack%20Ultimate.meta.js
 // ==/UserScript==
 
 function start() {
