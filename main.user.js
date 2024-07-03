@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LMVZ Digital Hack Ultimate
 // @namespace    http://tampermonkey.net/
-// @version      2024-03-12
+// @version      2024-07-03
 // @description  Lässt jedes Quiz gelöst aussehen.
 // @author       Claimingnine
 // @match        https://*.lmvz.ch/*
@@ -72,6 +72,15 @@ function start() {
     repeatElements.forEach(function(repeatElement) {
         repeatElement.classList.remove('-low', '-medium');
     });
+
+    var textElement = document.querySelector('div.text-style.-s17.-black.-center.-router.spacer-box.-m-bottom-s32');
+    if (textElement) {
+        var textContent = textElement.textContent;
+        var roundMatch = textContent.match(/Du hast Runde \d+ geschafft\./);
+        if (roundMatch) {
+            textElement.textContent = 'Du hast Runde 1426 geschafft.';
+        }
+    }
 
     setTimeout(start, 0);
 }
