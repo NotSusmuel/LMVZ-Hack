@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LMVZ Digital Hack Ultimate
 // @namespace    http://tampermonkey.net/
-// @version      2024-07-03
+// @version      2024-03-12
 // @description  Lässt jedes Quiz gelöst aussehen.
 // @author       Claimingnine
 // @match        https://*.lmvz.ch/*
@@ -9,7 +9,21 @@
 // @grant        none
 // ==/UserScript==
 
+let roundCounter = 1426;
+
 function start() {
+    function updateRoundCounter() {
+        roundCounter++;
+    }
+
+    setInterval(updateRoundCounter, 100);
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'h') {
+            roundCounter = "∞";
+        }
+    });
+
     var buttons = document.querySelectorAll('.buttons.exercise');
     buttons.forEach(function(button) {
         var score = button.getAttribute('data-quiz-score');
@@ -37,10 +51,6 @@ function start() {
         if (feedbackText) {
             feedbackText.innerHTML = 'C’est juste.';
         }
-    }
-
-    var feedbackIcon = document.querySelector('[js="feedback-icon"]');
-    if (feedbackIcon) {
     }
 
     var teleportView = document.querySelectorAll('div[view="TeleportView"]');
@@ -73,14 +83,18 @@ function start() {
         repeatElement.classList.remove('-low', '-medium');
     });
 
-    var textElement = document.querySelector('div.text-style.-s17.-black.-center.-router.spacer-box.-m-bottom-s32');
-    if (textElement) {
-        var textContent = textElement.textContent;
-        var roundMatch = textContent.match(/Du hast Runde \d+ geschafft\./);
-        if (roundMatch) {
-            textElement.textContent = 'Du hast Runde 1426 geschafft.';
+    function updateTextElement() {
+        var textElement = document.querySelector('div.text-style.-s17.-black.-center.-router.spacer-box.-m-bottom-s32');
+        if (textElement) {
+            var textContent = textElement.textContent;
+            var roundMatch = textContent.match(/Du hast Runde \d+ geschafft\./);
+            if (roundMatch) {
+                textElement.textContent = `Du hast Runde ${roundCounter} geschafft.`;
+            }
         }
     }
+
+    setInterval(updateTextElement, 0);
 
     setTimeout(start, 0);
 }
