@@ -89,7 +89,7 @@ function start() {
             var textContent = textElement.textContent;
             var roundMatch = textContent.match(/Du hast Runde \d+ geschafft\./);
             if (roundMatch) {
-                textElement.textContent = `Du hast Runde ${roundCounter} geschafft.`;
+                textElement.textContent = `Du hast Runde ${roundCounter} geschafft.(drücke H)`;
             }
         }
     }
