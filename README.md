@@ -11,3 +11,4 @@
 
 2. Click on this Button;
 	* [Install](https://raw.githubusercontent.com/NotSusmuel/LMVZ-Hack/main/main.user.js)
+ 	* [Install math](https://raw.githubusercontent.com/NotSusmuel/LMVZ-Hack/main/Math.user.js) 
