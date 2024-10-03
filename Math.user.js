@@ -23,7 +23,7 @@
             var inputFeld = document.querySelector('input[name="tresultat"]');
 
             if (inputFeld) {
-                var allText = resultText.replace(/%/g, ''); // Entfernt nur %
+                var allText = resultText.replace(/%/g, '');
 
                 inputFeld.value = allText;
                 trichtige += 1;s
