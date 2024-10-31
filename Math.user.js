@@ -53,6 +53,9 @@
             wiederholen();
         } else if (e.key === 'b') {
             wiederholen();
+        } else if (e.key === 'p') {
+            trichtige = -1;
+            wiederholen();
         }
     });
 })();
